@@ -1,0 +1,10 @@
+img {
+    image-rendering: -moz-crisp-edges;
+}
+
+@-moz-document url("about:config") {
+  treechildren::-moz-tree-row {
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+}

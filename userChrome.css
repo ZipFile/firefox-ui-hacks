@@ -1,0 +1,49 @@
+/* DO NOT DELETE THIS LINE */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@-moz-document url("chrome://browser/content/browser.xul"), url("chrome://browser/content/browser.xhtml") {
+    .tabbrowser-tab {
+        -moz-box-flex: 0 !important;
+        min-width: -moz-min-content !important;
+    }
+    .tabbrowser-tab[pending] {
+        opacity: 0.5 !important;
+    }
+    .tab-close-button, .tab-label-container, .tab-loading-burst {
+        display: none !important;
+    }
+    .tab-icon-image, .tab-throbber, .tab-throbber-fallback {
+        margin: 0 !important;
+    }
+    .tab-icon-image:not([src]) {
+        display: -moz-box !important;
+    }
+    .tabbrowser-tab[busy] .tab-icon-image {
+        display: none !important;
+    }
+    .panel-viewcontainer[panelopen], .panel-viewstack, statuspanel {
+        transition: none !important;
+    }
+    #search-container {
+        min-width: 32ch !important;
+    }
+
+    #TabsToolbar {
+        -moz-window-dragging: no-drag !important;
+    }
+
+    #toolbar-menubar > spacer {
+        display: none !important;
+    }
+
+    #navigator-toolbox > toolbar {
+        transition: none !important;
+    }
+    #navigator-toolbox .chromeclass-toolbar-additional {
+        max-width: none !important;
+    }
+
+    hbox#fullscr-toggler {
+        -moz-binding: url("userChrome.xml#js");
+    }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<bindings id="generalBindings"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="js">
+    <implementation>
+        <constructor><![CDATA[
+if (window.tabsOnBottom) {
+    return;
+}
+
+window.tabsOnBottom = true;
+
+(function(document) {
+    let tabsToolbar = document.getElementById("TabsToolbar");
+    let navigatorToolbox = document.getElementById("navigator-toolbox");
+    let fragment = document.createDocumentFragment();
+
+    tabsToolbar.classList.remove("titlebar-color");
+    fragment.appendChild(tabsToolbar);
+    navigatorToolbox.appendChild(fragment);
+})(window.document);
+        ]]></constructor>
+    </implementation>
+  </binding>
+</bindings>
