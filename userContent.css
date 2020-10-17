@@ -3,8 +3,12 @@ img {
 }
 
 @-moz-document url("about:config") {
-  treechildren::-moz-tree-row {
-    min-height: auto !important;
-    padding: 0 !important;
-  }
+    #prefs button {
+        margin: 0 4px !important;
+        min-height: 22px !important;
+    }
+
+    #prefs > tr:not(.add) > td, #prefs > tr:not(.add) > th {
+        padding: 0 4px !important;
+    }
 }

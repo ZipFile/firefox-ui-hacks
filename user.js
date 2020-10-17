@@ -1,7 +1,6 @@
 //
 
 // disable website bloat
-user_pref("browser.display.use_document_fonts", 0);
 user_pref("dom.enable_performance", false);
 user_pref("dom.serviceWorkers.enabled", false);
 user_pref("geo.enabled", false);
