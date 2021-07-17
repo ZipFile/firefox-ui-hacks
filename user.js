@@ -1,5 +1,8 @@
 //
 
+// development
+user_pref("xpinstall.signatures.required", false);
+
 // disable website bloat
 user_pref("dom.enable_performance", false);
 user_pref("dom.serviceWorkers.enabled", false);
@@ -59,3 +62,6 @@ user_pref("services.sync.engine.tabs", false);
 
 // enable css haxxx
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+// disable devtools copypaste protection
+users_pref("devtools.selfxss.count", 5);

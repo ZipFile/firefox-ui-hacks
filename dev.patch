@@ -1,0 +1,9 @@
+--- a/build/mozconfig.common.override	2021-07-05 16:19:58.000000000 +0000
++++ b/build/mozconfig.common.override	2021-07-17 14:25:31.469934155 +0000
+@@ -13,3 +13,6 @@
+ if test -n "$USE_ARTIFACT"; then
+ . "$topsrcdir/build/mozconfig.artifact"
+ fi
++
++MOZ_REQUIRE_SIGNING=0
++MOZ_DEV_EDITION=1
