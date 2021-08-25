@@ -1,48 +1,57 @@
---- a/browser/base/content/browser.xhtml	2020-10-17 07:25:00.102974343 +0000
-+++ b/browser/base/content/browser.xhtml	2020-10-17 07:53:06.877051595 +0000
-@@ -737,12 +737,13 @@
+--- a/browser/base/content/navigator-toolbox.inc.xhtml	2021-08-25 17:24:58.000000000 +0000
++++ b/browser/base/content/navigator-toolbox.inc.xhtml	2021-08-25 17:25:57.379508700 +0000
+@@ -24,12 +24,13 @@
  # shared with other top level windows in macWindow.inc.xhtml.
  #include browser-menubar.inc
-         </toolbaritem>
--        <spacer flex="1" skipintoolbarset="true" style="-moz-box-ordinal-group: 1000;"/>
+       </toolbaritem>
+-      <spacer flex="1" skipintoolbarset="true" style="-moz-box-ordinal-group: 1000;"/>
  #include titlebar-items.inc.xhtml
-       </toolbar>
-+    </vbox>
+     </toolbar>
++  </vbox>
  
-       <toolbar id="TabsToolbar"
--               class="browser-toolbar titlebar-color"
-+               class="browser-toolbar"
-+               style="-moz-box-ordinal-group: 1000;"
-                fullscreentoolbar="true"
-                customizable="true"
-                customizationtarget="TabsToolbar-customization-target"
-@@ -798,29 +799,11 @@
-           </hbox>
+     <toolbar id="TabsToolbar"
+-             class="browser-toolbar titlebar-color"
++             class="browser-toolbar"
++             style="-moz-box-ordinal-group: 1000;"
+              fullscreentoolbar="true"
+              customizable="true"
+              customizationtarget="TabsToolbar-customization-target"
+@@ -38,8 +39,6 @@
+              context="toolbar-context-menu"
+              flex="1">
+ 
+-      <hbox class="titlebar-spacer" type="pre-tabs"/>
+-
+       <hbox flex="1" align="end" class="toolbar-items">
+         <hbox id="TabsToolbar-customization-target" flex="1">
+           <tabs id="tabbrowser-tabs"
+@@ -85,29 +84,11 @@
          </hbox>
+       </hbox>
  
--        <hbox class="titlebar-spacer" type="post-tabs"/>
+-      <hbox class="titlebar-spacer" type="post-tabs"/>
 -
 -#ifndef XP_MACOSX
-         <button class="accessibility-indicator" tooltiptext="&accessibilityIndicator.tooltip;"
-                 aria-live="polite"/>
-         <hbox class="private-browsing-indicator"/>
+       <button class="accessibility-indicator" tooltiptext="&accessibilityIndicator.tooltip;"
+               aria-live="polite"/>
+       <hbox class="private-browsing-indicator"/>
 -#endif
 -
 -#include titlebar-items.inc.xhtml
 -
 -#ifdef XP_MACOSX
--        <!-- OS X does not natively support RTL for its titlebar items, so we prevent this secondary
--             buttonbox from reversing order in RTL by forcing an LTR direction. -->
--        <hbox id="titlebar-secondary-buttonbox" dir="ltr">
--          <button class="accessibility-indicator" tooltiptext="&accessibilityIndicator.tooltip;" aria-live="polite"/>
--          <hbox class="private-browsing-indicator"/>
--          <hbox id="titlebar-fullscreen-button"/>
--        </hbox>
+-      <!-- OS X does not natively support RTL for its titlebar items, so we prevent this secondary
+-           buttonbox from reversing order in RTL by forcing an LTR direction. -->
+-      <hbox id="titlebar-secondary-buttonbox" dir="ltr">
+-        <button class="accessibility-indicator" tooltiptext="&accessibilityIndicator.tooltip;" aria-live="polite"/>
+-        <hbox class="private-browsing-indicator"/>
+-        <hbox id="titlebar-fullscreen-button"/>
+-      </hbox>
 -#endif
-       </toolbar>
+     </toolbar>
  
--    </vbox>
+-  </vbox>
 -
-     <toolbar id="nav-bar"
-              class="browser-toolbar"
-              aria-label="&navbar.accessibleLabel;"
+   <toolbar id="nav-bar"
+            class="browser-toolbar"
+            aria-label="&navbar.accessibleLabel;"
