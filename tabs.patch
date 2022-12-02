@@ -1,6 +1,6 @@
---- a/browser/base/content/navigator-toolbox.inc.xhtml	2021-11-29 14:01:10.000000000 +0000
-+++ b/browser/base/content/navigator-toolbox.inc.xhtml	2021-12-11 20:48:24.878581570 +0000
-@@ -24,12 +24,14 @@
+--- a/browser/base/content/navigator-toolbox.inc.xhtml	2022-11-30 09:17:31.000000000 +0000
++++ b/browser/base/content/navigator-toolbox.inc.xhtml	2022-11-30 09:17:46.083853599 +0000
+@@ -22,12 +22,14 @@
  # shared with other top level windows in macWindow.inc.xhtml.
  #include browser-menubar.inc
        </toolbaritem>
@@ -17,24 +17,26 @@
               fullscreentoolbar="true"
               customizable="true"
               customizationtarget="TabsToolbar-customization-target"
-@@ -38,8 +40,6 @@
+@@ -36,8 +38,6 @@
               context="toolbar-context-menu"
               flex="1">
  
 -      <hbox class="titlebar-spacer" type="pre-tabs"/>
 -
        <hbox flex="1" align="end" class="toolbar-items">
+         <toolbartabstop/>
          <hbox id="TabsToolbar-customization-target" flex="1">
-           <tabs id="tabbrowser-tabs"
-@@ -83,18 +83,12 @@
+@@ -100,20 +100,14 @@
          </hbox>
        </hbox>
  
 -      <hbox class="titlebar-spacer" type="post-tabs"/>
 -
-       <button class="accessibility-indicator" data-l10n-id="navbar-accessibility-indicator"
-               aria-live="polite"/>
        <hbox class="private-browsing-indicator"/>
+       <hbox id="private-browsing-indicator-with-label">
+         <image class="private-browsing-indicator-icon"/>
+         <label data-l10n-id="private-browsing-indicator-label"></label>
+       </hbox>
  
 -#include titlebar-items.inc.xhtml
 -

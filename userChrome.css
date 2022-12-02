@@ -1,7 +1,8 @@
 @-moz-document url("chrome://browser/content/browser.xul"), url("chrome://browser/content/browser.xhtml") {
     .tabbrowser-tab {
-        -moz-box-flex: 0 !important;
+        -moz-box-flex: unset !important;
         min-width: unset !important;
+        width: unset !important;
     }
     .tabbrowser-tab[pending] {
         opacity: 0.5 !important;
